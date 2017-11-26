@@ -47,9 +47,9 @@ y_new = y;
 % subplot(5,1,2)
 % plot(y_new);
 
-for i = 1:num_frames
-    t = (i-1)*p + 1 : i*p;
-    interval = y_new((i-1)*p + 1 : i*p );
+for ii = 1:num_frames
+    t = (ii-1)*p + 1 : ii*p;
+    interval = y_new((ii-1)*p + 1 : ii*p );
     filt = interval.*w;
     ftransform(t) = dct(filt);
     pp(t) = 2595*log(((abs(t))/700) + 1);

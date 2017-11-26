@@ -1,4 +1,5 @@
 # Automatic-Instrument-Identification
-Automatic musical instrument recognition from polyphonic music audio signals. Instrument recognition is done using classification techniques. <br />
-In particular, the developed method models 11 instrumental categories, including pitched and percussive instruments as well as the human singing voice, all of them frequently adopted in Western music.The instruments considered are: cello (cel), clarinet (cla), flute(flu), acoustic guitar (gac), electric guitar (gel), organ (org), piano (pia), saxophone (sax), trumpet (tru), violin (vio), and human singing voice (voi). Additionally we include the singing Voice, since its presence or absence in a given musical composition can carry important semantic information. <br />
-Dataset used is :- http://mtg.upf.edu/descargas/node/12/download/17e7a762691ce3059d4d63abe7f34513
+Automatic musical instrument recognition of monophonic and monotimbral music instruments sound signals. Instrument recognition is done using classification techniques. <br />
+In particular, the developed method taking into 7 instrumental categories including Cello  (889 samples), Clarinet (846 samples), Flute (878 samples), Guitar (106 samples), Saxophone (732 samples),Trumpet (485 samples), Violin (1502 samples). <br />
+Dataset used is :- http://www.philharmonia.co.uk/explore/sound_samples/banjo
+Research Paper considered:- https://arxiv.org/pdf/1705.04971.pdf

@@ -7,10 +7,6 @@ directory_in=input(prompt,'s');
 prompt2 = 'enter directory path for the noisy data of each instrument: ';
 directory_noisy=input(prompt2,'s');
 
-prompt1 = 'enter filename of the dataset file: ';
-directory_dataset =input(prompt1,'s');
-%directory_dataset = '/home/simran/SMAI/Learning Instrument Recognition/dataset.csv';
-
 fid = fopen( directory_dataset, 'w' );
 
 dir(directory_in);

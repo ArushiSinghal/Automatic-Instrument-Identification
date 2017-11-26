@@ -1,13 +1,12 @@
 close all;
 clear all;
-
-wave_folder=input('enter directory path of the dataset of each instrument');
+prompt = 'enter directory path of the dataset of each instrument: ';
+directory_in=input(prompt,'s');
 %directory_in = '/home/simran/SMAI/Learning Instrument Recognition/Dataset/Waves/';
-directory_in = wave_folder;
 
-dataset_filename=input('enter filename of the dataset file');
+prompt1 = 'enter filename of the dataset file: ';
+directory_dataset =input(prompt1,'s');
 %directory_dataset = '/home/simran/SMAI/Learning Instrument Recognition/dataset.csv';
-directory_dataset = dataset_filename;
 
 fid = fopen( directory_dataset, 'w' );
 

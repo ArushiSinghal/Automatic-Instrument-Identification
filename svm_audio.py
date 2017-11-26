@@ -6,7 +6,7 @@ from sklearn.model_selection import StratifiedShuffleSplit
 from sklearn.metrics import accuracy_score, precision_score, recall_score
 import numpy as np
 from csv import reader
-from sklearn.manifold.t_sne import TSNE
+#from sklearn.manifold.t_sne import TSNE
 
 def load_csv(filename):
     file = open(filename, "rt")
@@ -66,17 +66,17 @@ for train_indices, test_indices in sss.split(X_data, Y_data):
     metrics.append(SVM(train_data, train_labels, test_data, test_labels))
     fold += 1
 
-    accuracy = 0.00
-    precision = 0.00
-    recall = 0.00
-    fi = 0.00
-    for i in metrics:
+accuracy = 0.00
+precision = 0.00
+recall = 0.00
+fi = 0.00
+for i in metrics:
         accuracy += i[0]
         precision += i[1]
         recall += i[2]
         fi += i[3]
-    accuracy = accuracy/5.0
-    precision = precision/5.0
-    recall = recall/5.0
-    fi = fi/5.0
-    print (accuracy),(","),(precision),(", "),(recall),(", "),(fi)
+accuracy = accuracy/5.0
+precision = precision/5.0
+recall = recall/5.0
+fi = fi/5.0
+print (accuracy),(","),(precision),(", "),(recall),(", "),(fi)

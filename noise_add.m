@@ -7,8 +7,6 @@ directory_in=input(prompt,'s');
 prompt2 = 'enter directory path for the noisy data of each instrument: ';
 directory_noisy=input(prompt2,'s');
 
-fid = fopen( directory_dataset, 'w' );
-
 dir(directory_in);
 d = dir(directory_in);
 isub = [d(:).isdir];

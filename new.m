@@ -1,3 +1,6 @@
+close all;
+clear all;
+
 wave_folder=input('enter directory path of the dataset of each instrument');
 %directory_in = '/home/simran/SMAI/Learning Instrument Recognition/Dataset/Waves/';
 directory_in = wave_folder;

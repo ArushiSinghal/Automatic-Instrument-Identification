@@ -20,3 +20,6 @@ Dataset of the project :- https://drive.google.com/file/d/17MlMlGGeRQtYVuUCixoHj
 Link of Presentation:- https://docs.google.com/presentation/d/1BtmrDHZg5RXMCW-lMgZ1cG7ZDpiGClWmtBwMR-UAtv8/edit?usp=sharing <br />
 
 # RUN THE CODE
+```
+python svm_audio.py features.csv
+```

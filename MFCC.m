@@ -1,24 +1,34 @@
 close all;
 clear all;
+wave_folder=input('enter directory path of the dataset of each instrument');
+%directory_in = '/home/simran/SMAI/Learning Instrument Recognition/Dataset/Waves/';
+directory_in = wave_folder;
 
-Features = load('faetures_noise.mat');
-x = Features.x;
-folder = '/media/minato/Data/SEM 5/SMAI/Final_project/noise_waves/violin';
-audio_files = dir(fullfile(folder,'*.wav'));
-len = numel(audio_files);
-% x = zeros(len,14);
+dataset_filename=input('enter filename of the dataset file');
+%directory_dataset = '/home/simran/SMAI/Learning Instrument Recognition/dataset.csv';
+directory_dataset = dataset_filename;
 
-for file = 1:len
-    file
-    filename = audio_files(file).name;
-    b = (fullfile(folder,filename));
+fid = fopen( directory_dataset, 'w' );
 
-    % Reading .wav file
-    [y,Fs] = audioread(b);
-% figure,
-% subplot(5,1,1)
-% plot(y);
-% size(y)
+dir(directory_in);
+d = dir(directory_in);
+isub = [d(:).isdir];
+nameFolds = {d(isub).name}';
+nameFolds(ismember(nameFolds,{'.','..'})) = [];
+
+for i = 1:size(nameFolds)
+nums = [nameFolds{i,:}];
+s = strcat(directory_in,nums);
+
+allFiles = dir(s);
+allNames = {allFiles.name};
+allNames(ismember(allNames,{'.','..'})) = [];
+[rows, columns] = size(allNames);
+for j = 1:columns
+
+ audio_path = strcat(s,'/',[allNames{:,j}]);
+    %disp(audio_path);
+[y,Fs] = audioread(audio_path);
 
 % Silence removal
 y(abs(y) <= 0.009) = [];
@@ -28,7 +38,6 @@ y(abs(y) <= 0.009) = [];
 a = size(y,1);
 p = 882;
 num_frames = floor(a/p);
-
 
 w = hamming(p);
 % subplot(5,1,3)
@@ -46,22 +55,21 @@ for i = 1:num_frames
     pp(t) = 2595*log(((abs(t))/700) + 1);
         
 end
+
 % subplot(5,1,4)
 % plot(pp,(abs(ftransform)));
 inv_transform = idct(log(abs(ftransform)+0.1));
 % subplot(5,1,5)
 k = 1:13;
 % plot((inv_transform));
-
 xx = zeros(1,14);
 xx(1,1:13) = inv_transform(1,1:13);
-xx(1,14) = 7;
+xx(1,14) = i;
+dlmwrite(directory_dataset,xx,'delimiter',',','-append');
 
-x = vertcat(x,xx);
 % figure,plot(inv_transform);
-
 % figure,plot(inv_transform(1:20));
-end
-
 % len
 % size(x)
+end
+end

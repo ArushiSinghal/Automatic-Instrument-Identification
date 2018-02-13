@@ -4,7 +4,7 @@ Course Project for SMAI - Music instrument recognition
 TeamNO 49- Digiminds
 ------------------------
 * Arushi Singhal (201516178)
-* Avani Singhal (201530194) 
+* Avani Agrawal (201530194) 
 * Simran Singhal (201516190) 
 
 TA Mentor

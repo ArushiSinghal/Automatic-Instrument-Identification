@@ -19,6 +19,9 @@ Research Paper considered:- http://cs229.stanford.edu/proj2015/010_report.pdf <b
 Dataset of the project :- https://drive.google.com/file/d/17MlMlGGeRQtYVuUCixoHjkLYU_3RuNu5/view <br />
 Link of Presentation:- https://docs.google.com/presentation/d/1BtmrDHZg5RXMCW-lMgZ1cG7ZDpiGClWmtBwMR-UAtv8/edit?usp=sharing <br />
 
+Guitar dataser :- https://drive.google.com/file/d/1Un5UpwG4Md8_Uh5uZ3B17LHLBn9yoi9j/view?usp=sharing
+Dataset :- https://drive.google.com/file/d/1yQXwzNDFHXOEQgaXcTDoq3zl_m83JDAv/view?usp=sharing
+
 # RUN THE CODE
 ```
 python svm_audio.py features.csv
